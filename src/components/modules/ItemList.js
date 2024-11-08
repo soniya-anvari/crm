@@ -6,10 +6,17 @@ function ItemList({form,setForm}) {
         setForm({...form,products:[...products,{name:"",price:"",qty:""}]})
         console.log(products)
     }
-    const changHandler=()=>{
+    const changHandler=(e,index)=>{
+        const newProducts=[...products]
+        newProducts[index][e.target.name]=e.target.value
+        setForm({...form,products:newProducts})
+
+
 
     }
-    const deleteHandler=()=>{
+    const deleteHandler=(index)=>{
+        const newProducts=products.filter((item,i)=>i!==index) // or => const newProducts=[...products] __ newProducts.splice(index,1)
+        setForm({...form,products:newProducts})
 
     }
   return (
@@ -20,17 +27,17 @@ function ItemList({form,setForm}) {
             <div key={index } className="form-input__list">
 
             <FormInput name="name" label="Product Name" type="text" value={product.name} 
-            onChange={changHandler} /> 
+            onChange={(e)=>changHandler(e,index)} /> 
             <div>
                 
             <FormInput name="price" label="Product Price" type="text" value={product.price} 
-            onChange={changHandler} /> 
+            onChange={(e)=>changHandler(e,index)} /> 
             
             <FormInput name="qty" label="Product Qty" type="number" value={product.qty} 
-            onChange={changHandler} /> 
+            onChange={(e)=>changHandler(e,index)} /> 
 
             </div>
-            <button onClick={deleteHandler}>Remove</button>
+            <button onClick={()=>deleteHandler(index)}>Remove</button>
             </div>
 
         )
