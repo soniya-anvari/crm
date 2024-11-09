@@ -27,4 +27,16 @@ export default async function handler(req,res){
 
         }
             }
+        if (req.method=="DELETE"){
+            const id=JSON.parse(req.body).id
+            console.log(id)
+            try{
+                await Customer.deleteOne({_id:id})
+                res.status(200).json({status:"success",message:"user is deleted"})
+            }
+            catch(error){
+                res.status(500).json({status:"failed",message:"Error in Deleting data for DB"})
+            }
+
+        }
 }

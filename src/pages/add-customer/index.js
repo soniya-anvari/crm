@@ -7,3 +7,5 @@ function AddCustomer({customers}) {
     <AddCustomerPage />
   )
 }
+
+export default AddCustomer;
