@@ -1,8 +1,8 @@
 <div>
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,github" alt='icons' />
+  <img src="https://skillicons.dev/icons?i=html,css,next,github" alt='icons' />
 </div>
 <h1>Technologies Used:</h1>
-<p>Next js , tailwind</p>
+<p>Next js</p>
 <h1>Project Features:</h1>
 <ul>
   <li>Add customer</li>
