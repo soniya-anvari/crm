@@ -23,7 +23,7 @@ function ItemList({form,setForm}) {
    
     <div className="item-list">
         <p>Purchased Products</p>
-        {products.map((product,index)=>(
+        {products&&products?.map((product,index)=>(
             <div key={index } className="form-input__list">
 
             <FormInput name="name" label="Product Name" type="text" value={product.name} 

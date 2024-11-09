@@ -1,9 +1,8 @@
-import EditCustomer from '@/components/template/EditCustomer'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-
-function index() {
-  const router=useRouter()
+import { useRouter } from 'next/router';
+import CustomerDetails from '../../components/template/CutomerDetails';
+import { useEffect, useState } from 'react';
+function  index() {
+    const router=useRouter()
   const [customer,setCustomer]=useState([])
   
   useEffect(()=>{
@@ -24,8 +23,10 @@ function index() {
 
       },[router.isReady])
   return (
-    <div><EditCustomer customer={customer} id={router.query.customerId} /></div>
+    <div>
+        <CustomerDetails customer={customer} />
+    </div>
   )
 }
 
-export default index
+export default index;

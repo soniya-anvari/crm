@@ -4,7 +4,6 @@ import ItemList from "./ItemList"
 function Form({form,setForm}) {
   const changeHandler=(e)=>{
     setForm({...form,[e.target.name]:e.target.value})
-    console.log(form)
 
   }
   return (
